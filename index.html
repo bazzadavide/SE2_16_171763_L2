@@ -14,32 +14,36 @@
                 <th>Quantità</th>
             </tr>
            <tr>
-                <th>A</th>
-                <th>1</th>
+                <td>A</td>
+                <td>1</td>
             </tr>
            <tr>
-                <th>B</th>
-                <th>2</th>
+                <td>B</td>
+                <td>2</td>
             </tr>
            <tr>
-                <th>C</th>
-                <th>3</th>
+                <td>C</td>
+                <td>3</td>
             </tr>
        </table> 
        <br>
        <br>
-       <div id='hideTable'></div>
-       <table style="width:50%" id="inputTable">
-            <tr>
-                <th>Oggetto</th>
-                <th>Quantità</th>
-            </tr>
-           <tr>
-                <th><input type='text' id='oggetto'></th>
-                <th><input type='text' id='quantita'></th>
-            </tr>
-       </table>
-       <button onclick="addElementToTable()">Aggiungi al magazzino</button>
+       <div id="buttonAddSomething">
+            <button onclick="hideAndSeek()">Vuoi aggiungere qualcosa?</button>
+       </div>
+       <div id='hideTable' style='visibility: hidden'>
+            <table style="width:50%" id="inputTable">
+                <tr>
+                    <th>Oggetto</th>
+                    <th>Quantità</th>
+                </tr>
+                <tr>
+                    <th><input type='text' id='oggetto'></th>
+                    <th><input type='text' id='quantita'></th>
+                </tr>
+            </table>
+            <button onclick="addElementToTable()">Aggiungi al magazzino</button>
+        </div>
        
        <div id="inputLimitDiv">
            <p>Inserisci il limite del magazzino</p>

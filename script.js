@@ -6,6 +6,8 @@ var limit=30;
 var lock=0;
 var table = document.getElementById("table");
 
+
+
 function addRow(element1, element2){
     // Insert a Row in the table
     var rowLength = table.rows.length;
@@ -79,8 +81,13 @@ function addElementToTable(){
             
             }
         if(mark==0) addRow(leftInput,rightInput);
+        var divOne = document.getElementById('hideTable');
+        var divTwo = document.getElementById('buttonAddSomething');
+        divOne.style.visibility = 'hidden';
+        divTwo.style.visibility = 'visible';
         
-    } 
+    }
+    
 }
 
 function cancelAndRedo(element1,element2,point){
@@ -124,3 +131,4 @@ function hideAndSeek(){
     divOne.style.visibility = 'visible';
     divTwo.style.visibility = 'hidden';
 }
+
