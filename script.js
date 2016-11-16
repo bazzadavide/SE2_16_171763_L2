@@ -49,8 +49,16 @@ function addElementToTable(){
     else {
         takeElementFromInputTable();
         takeElementFromTable();
-        var tot = sumOfElements(rightArray);
-        if(testLimit(tot,limit)==1){
+        var sum=0;
+        console.log("presum: "+sum);
+        for(i=1;i<rightArray.length;i++){
+            console.log("rightArray di i: "+rightArray[i]);
+            console.log("parseInt di prima: "+parseInt(rightArray[i]));
+            sum = sum+parseInt(rightArray[i]);
+            console.log("ciclo i: "+i+" sum: "+sum);
+        }
+        console.log("postsum: "+sum);
+        if(testLimit(sum+parseInt(rightInput),limit)==1){
             alert("Hai sforato il magazzino, non verranno accettati altri componenti");
             lock = 1;
         } 
@@ -88,19 +96,23 @@ function cancelAndRedo(element1,element2,point){
 
 
 function setLimit(){
-    var x = document.getElementById("inputLimit");
+    var x = document.getElementById("inputLimit").value;
     limit = x;
+    console.log("limit: "+limit);
+    if(lock==1 && testLimit(sumOfElements(rightArray)),limit) lock=0;
 }
 
 function testLimit(parameter1, parameter2){
     var res=0;
+    console.log("parameter1: "+parameter1+" parameter2: "+parameter2);
     if(parameter1>parameter2) res=1;
     return res;
 }
 
 function sumOfElements(array){
     var sum=0;
-    for(i=0;i<array.length;i++)
+    for(i=1;i<array.length;i++)
         sum += array[i];
+    console.log("sum: "+sum);
     return sum;
 }
