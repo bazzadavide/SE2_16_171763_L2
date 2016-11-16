@@ -116,3 +116,11 @@ function sumOfElements(array){
     console.log("sum: "+sum);
     return sum;
 }
+
+
+function hideAndSeek(){
+    var divOne = document.getElementById('hideTable');
+    var divTwo = document.getElementById('buttonAddSomething');
+    divOne.style.visibility = 'visible';
+    divTwo.style.visibility = 'hidden';
+}
